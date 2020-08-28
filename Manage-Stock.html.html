@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JS getAttribute() Demo</title>
+</head>
+<body>
+
+
+    <h4>Available Stock/Quantity: 12</h4>
+
+</br></br></br>
+
+<label for="input"> Select Quantity  </label><input type="number" target="_blank" id="js" min="1" max="12" value="1" onkeyup="myFunction()">
+</input>
+
+
+
+
+
+<a href="https://www.w3docs.com/" class="button" id="btn">Add To Cart</a>
+
+</br></br></br>
+
+<h4>
+    Open your console to see the result/output.
+</h4>
+
+    <script>
+
+        function myFunction(){
+
+        
+        let link = document.querySelector('#js');
+
+        if (link) {
+            var maxvalue = link.getAttribute('max');
+
+            var maxvalue1= parseInt(maxvalue);
+
+            var qnty = document.getElementById('js').value;
+
+             
+            console.log("Maximum qnty: ", maxvalue1);
+
+            console.log("Quantity Selected: ", qnty);
+
+            if(qnty == 0){
+			 alert("The Quantity should not be 0");
+               document.getElementById("btn").style.visibility = "hidden";
+			}
+            else if(qnty > maxvalue1 ){
+
+                alert("The Quantity you enter should be less than available stock");
+                document.getElementById("btn").style.visibility = "hidden";
+
+
+               var qnty = document.getElementById('js').value;
+            }
+
+            else{
+				document.getElementById("btn").style.visibility = "visible";
+			}
+            
+             
+
+
+        }
+
+    }
+
+
+    </script>
+</body>
+</html>
